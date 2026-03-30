@@ -4,7 +4,7 @@ import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.TitleScreen;
@@ -13,6 +13,8 @@ import net.minecraft.resources.Identifier;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.swing.text.JTextComponent;
 
 public class PanicButton implements ModInitializer {
 	public static final String MOD_ID = "panicbutton";
@@ -28,7 +30,7 @@ public class PanicButton implements ModInitializer {
 		String KEY = "key.panicbutton.quit_game";
 
 		KeyMapping panickey;
-		panickey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
+		panickey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
 				KEY,
 				InputConstants.Type.KEYSYM,
 				GLFW.GLFW_KEY_COMMA,
@@ -54,7 +56,7 @@ public class PanicButton implements ModInitializer {
 		}
 		if (mc.player == null) return;
 		mc.execute(() -> {
-			mc.disconnect(new TitleScreen(), false);
+			mc.getConnection().getConnection().disconnect(Component.translatable("Panic Quit!"));
 		});
 	}
 }
