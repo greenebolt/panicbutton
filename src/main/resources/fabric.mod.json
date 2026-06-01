@@ -3,7 +3,7 @@
 	"id": "panicbutton",
 	"version": "${version}",
 	"name": "PanicButton",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Adds a keybind to quit the server.",
 	"authors": [
 		"GreeneBolt"
 	],
@@ -20,8 +20,8 @@
 		]
 	},
 	"depends": {
-		"fabricloader": ">=0.18.5",
-		"minecraft": "~26.1",
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~26.1.2",
 		"java": ">=25",
 		"fabric-api": "*"
 	}
