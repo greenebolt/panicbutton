@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"id": "panicbutton",
+	"version": "${version}",
+	"name": "PanicButton",
+	"description": "Adds a keybind to quit the server.",
+	"authors": [
+		"GreeneBolt"
+	],
+	"contact": {
+		"homepage": "https://github.com/greenebolt",
+		"sources": "https://github.com/greenebolt/panicbutton"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/panicbutton/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"greenebolt.panicbutton.PanicButton"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
