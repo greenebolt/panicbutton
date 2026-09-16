@@ -28,7 +28,7 @@ public class PanicButton implements ModInitializer {
 		KeyMapping panickey;
 		panickey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
 				KEY,
-				InputConstants.Type.KEYBOARD,
+				InputConstants.Type.KEYSYM,
 				188,
 				CATEGORY
 		));
@@ -52,7 +52,7 @@ public class PanicButton implements ModInitializer {
 		}
 		if (mc.player == null) return;
 		mc.execute(() -> {
-			mc.disconnect(new TitleScreen(), false);
+			mc.getConnection().getConnection().disconnect(Component.translatable("Panic Quit"));
 		});
 	}
 }
