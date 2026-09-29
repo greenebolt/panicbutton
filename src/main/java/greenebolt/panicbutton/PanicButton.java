@@ -1,12 +1,12 @@
 package greenebolt.panicbutton;
 
+import com.google.common.base.Ascii;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
@@ -29,7 +29,7 @@ public class PanicButton implements ModInitializer {
 		panickey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
 				KEY,
 				InputConstants.Type.KEYBOARD,
-				188,
+				InputConstants.KEY_COMMA,
 				CATEGORY
 		));
 
@@ -52,7 +52,7 @@ public class PanicButton implements ModInitializer {
 		}
 		if (mc.player == null) return;
 		mc.execute(() -> {
-			mc.disconnect(new TitleScreen(), false);
+			mc.getConnection().getConnection().disconnect(Component.translatable("Panic Quit!"));
 		});
 	}
 }
