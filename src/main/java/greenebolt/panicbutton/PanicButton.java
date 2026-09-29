@@ -29,7 +29,7 @@ public class PanicButton implements ModInitializer {
 		panickey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
 				KEY,
 				InputConstants.Type.KEYSYM,
-				188,
+				InputConstants.KEY_COMMA,
 				CATEGORY
 		));
 
